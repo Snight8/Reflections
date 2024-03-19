@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        input = new(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         //end meth calculation
         player.Translate(MovementCalc(input));
@@ -22,7 +22,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (flipX) input.x = -input.x;
         if (flipZ) input.z = -input.z;
-        Vector3 movement = new(input.x * speed, 0, input.z * speed);
+        Vector3 movement = new Vector3(input.x * speed, 0, input.z * speed);
         return movement;
     }
 }
