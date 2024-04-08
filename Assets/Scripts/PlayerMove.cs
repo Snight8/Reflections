@@ -9,8 +9,9 @@ public class PlayerMove : MonoBehaviour
     public float speed;
     public Transform player;
     public Transform playerMirror;
+
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
@@ -18,7 +19,8 @@ public class PlayerMove : MonoBehaviour
         player.Translate(MovementCalc(input));
         playerMirror.Translate(MovementCalc(input, true));
     }
-    Vector3 MovementCalc(Vector3 input, bool flipX = false, bool flipZ = false)
+
+    private Vector3 MovementCalc(Vector3 input, bool flipX = false, bool flipZ = false)
     {
         if (flipX) input.x = -input.x;
         if (flipZ) input.z = -input.z;

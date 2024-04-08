@@ -6,7 +6,7 @@ using Cinemachine;
 public class CamManager : MonoBehaviour
 {
     public CinemachineVirtualCamera VirtualCamera;
-    CinemachineFramingTransposer Transposer;
+    private CinemachineFramingTransposer Transposer;
     public Camera Cam;
     public GameObject ssBar;
     public GameObject ssCam1;
@@ -14,12 +14,13 @@ public class CamManager : MonoBehaviour
     public bool OverrideSplitscreen; //run the check splitscreen logic only if this is disabled. if this is disabled, you can set whether it's splitscreen or not manually.
     public bool inSplitscreen;
 
-    void Awake()
+    private void Awake()
     {
         Transposer = VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
+
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!OverrideSplitscreen) inSplitscreen = Cam.fieldOfView == Transposer.m_MaximumFOV; //if the normal camera's FOV equals the max FOV from Cinemachine, it should enable the splitscreen cameras.
         ssCam1.SetActive(inSplitscreen);

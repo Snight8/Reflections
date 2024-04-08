@@ -9,24 +9,25 @@ public class DoorTypes : MonoBehaviour
     public bool MirrorDoor;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "MirrorPlayer" && MirrorDoor == true)
+        Debug.Log("Collided.");
+        if (collision.gameObject.tag == "MirrorPlayer" && MirrorDoor == true)
         {
             Destroy(gameObject);
         }
-        if (other.gameObject.tag == "Player" && PlayerDoor == true)
+        if (collision.gameObject.tag == "Player" && PlayerDoor == true)
         {
             Destroy(gameObject);
         }
