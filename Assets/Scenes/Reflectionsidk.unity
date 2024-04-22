@@ -781,8 +781,9 @@ GameObject:
   - component: {fileID: 1213495784}
   - component: {fileID: 1213495783}
   - component: {fileID: 1213495782}
+  - component: {fileID: 1213495785}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -810,7 +811,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213495780}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
@@ -860,6 +861,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213495780}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1213495785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213495780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cd185341eeff044ab7fc4f286c4558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  realCamera: {fileID: 0}
 --- !u!1 &1267799840
 GameObject:
   m_ObjectHideFlags: 0
