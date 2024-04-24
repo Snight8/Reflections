@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Mirrors : MonoBehaviour
 {
-    public Camera realCamera;
-    GameObject hesHere;
-    GameObject twoOfThem;
-    public bool realPlayerMirror;
-    public bool mirrorPlayerMirror;
+    public Camera realCamera; // main camera. not sure if this plays nice with cinemachine yet? need to test if flashes works while cameras are split
+    GameObject hesHere; // standard player
+    GameObject twoOfThem; // mirror player
+    public bool realPlayerMirror; // is the mirror this script is assigned to for the real player?
+    public bool mirrorPlayerMirror; //  is the mirror this script is assigned to for the mirror player?
 
     void OnTriggerEnter(Collider other)
     {
