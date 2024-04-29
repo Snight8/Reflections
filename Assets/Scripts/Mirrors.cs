@@ -33,12 +33,6 @@ public class Mirrors : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-            Debug.Log("You're out.");
-            flashAColor.color = new Color32(0, 0, 0, 0);
-    }
-
     void constraintsForGameObject(int typeOfConstraints)
     {
         if (typeOfConstraints == 1)
@@ -67,7 +61,7 @@ public class Mirrors : MonoBehaviour
 
     IEnumerator GetOutPlease()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         if (realPlayerMirror == true)
         {
             hesHere.GetComponent<Collider>().enabled = true;
@@ -78,6 +72,7 @@ public class Mirrors : MonoBehaviour
             twoOfThem.GetComponent<Collider>().enabled = true;
             twoOfThem.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
+        flashAColor.color = new Color32(0, 0, 0, 0);
         yield return null;
     }
 }

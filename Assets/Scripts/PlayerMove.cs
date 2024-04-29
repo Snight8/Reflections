@@ -9,6 +9,9 @@ public class PlayerMove : MonoBehaviour
     public float speed;
     public Transform player;
     public Transform playerMirror;
+    //---adding temporary stuff to choose which mirror type---
+    public bool zMirror;
+    public bool xMirror;
 
     // Update is called once per frame
     private void Update()
@@ -17,7 +20,15 @@ public class PlayerMove : MonoBehaviour
 
         //end meth calculation
         player.Translate(MovementCalc(input));
-        playerMirror.Translate(MovementCalc(input, true));
+        if (zMirror == true)
+        {
+            playerMirror.Translate(MovementCalc(input, true));
+        }
+        if (xMirror == true)
+        {
+            playerMirror.Translate(MovementCalc(input, false, true));
+        }
+        //defaults to no mirror movement
     }
 
     private Vector3 MovementCalc(Vector3 input, bool flipX = false, bool flipZ = false)
