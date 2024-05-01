@@ -49,19 +49,19 @@ public class Mirrors : MonoBehaviour
     IEnumerator MirrorDoesThings()
     {
         flashAColor.color = new Color32(255,255,255,100); //white
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.05f);
         flashAColor.color = new Color32(96, 237, 247, 100); //cyan
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.05f);
         flashAColor.color = new Color32(12, 42, 194, 100); //blue
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.05f);
         flashAColor.color = new Color32(76, 125, 199, 100); //light blue
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.05f);
         yield return null;
     }
 
     IEnumerator GetOutPlease()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f); //the total of all the Waits in MirrorDoesThings need to be less than this wait
         if (realPlayerMirror == true)
         {
             hesHere.GetComponent<Collider>().enabled = true;
