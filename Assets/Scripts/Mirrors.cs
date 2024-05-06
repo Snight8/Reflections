@@ -8,42 +8,29 @@ public class Mirrors : MonoBehaviour
     public Image flashAColor; //it's that png you told me to have instead of camera for effects
     GameObject hesHere; // standard player
     GameObject twoOfThem; // mirror player
-    public bool realPlayerMirror; // is the mirror this script is assigned to for the real player?
-    public bool mirrorPlayerMirror; //  is the mirror this script is assigned to for the mirror player?
     public AudioClip passingThrough; //the sound that plays when you're in the mirror. Get it?!??!/1!?
+
+    private void Awake()
+    {
+        hesHere = GameObject.Find("Player Character");
+        twoOfThem = GameObject.Find("Mirror Character");
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "MirrorPlayer")
         {
-            if(realPlayerMirror == true && other.gameObject.tag == "Player")
+            if(other.gameObject.tag == "Player")
             {
-                hesHere = other.gameObject;
                 constraintsForGameObject(1);
-                hesHere.GetComponent<Collider>().enabled = false;
             }
-            else if (mirrorPlayerMirror == true && other.gameObject.tag == "MirrorPlayer")
+            if (other.gameObject.tag == "MirrorPlayer")
             {
-                twoOfThem = other.gameObject;
                 constraintsForGameObject(2);
-                twoOfThem.GetComponent<Collider>().enabled = false;
             }
             Debug.Log("You're in.");
             StartCoroutine(MirrorDoesThings());
             StartCoroutine(GetOutPlease());
-        }
-    }
-
-    void constraintsForGameObject(int typeOfConstraints)
-    {
-        if (typeOfConstraints == 1)
-        {
-            hesHere.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
-        }
-
-        if (typeOfConstraints == 2)
-        {
-            twoOfThem.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
         }
     }
 
@@ -63,18 +50,43 @@ public class Mirrors : MonoBehaviour
 
     IEnumerator GetOutPlease()
     {
-        yield return new WaitForSeconds(0.25f); //the total of all the Waits in MirrorDoesThings need to be less than this wait
-        if (realPlayerMirror == true && hesHere.gameObject.tag == "Player")
+        yield return new WaitForSeconds(0.25f); //the total of all the Waits in MirrorDoesThings need to be less than this Wait
+        if (hesHere.gameObject.tag == "Player")
+        {
+            constraintsForGameObject(3);
+        }
+        if (twoOfThem.gameObject.tag == "MirrorPlayer")
+        {
+            constraintsForGameObject(4);
+        }
+        flashAColor.color = new Color32(0, 0, 0, 0);
+        yield return null;
+    }
+
+    void constraintsForGameObject(int typeOfConstraints)
+    {
+        if (typeOfConstraints == 1)
+        {
+            hesHere.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+            hesHere.GetComponent<Collider>().enabled = false;
+        }
+
+        if (typeOfConstraints == 2)
+        {
+            twoOfThem.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+            twoOfThem.GetComponent<Collider>().enabled = false;
+        }
+
+        if (typeOfConstraints == 3)
         {
             hesHere.GetComponent<Collider>().enabled = true;
             hesHere.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
-        if (mirrorPlayerMirror == true && twoOfThem.gameObject.tag == "MirrorPlayer")
+
+        if (typeOfConstraints == 4)
         {
             twoOfThem.GetComponent<Collider>().enabled = true;
             twoOfThem.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
-        flashAColor.color = new Color32(0, 0, 0, 0);
-        yield return null;
     }
 }
