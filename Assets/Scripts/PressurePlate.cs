@@ -8,7 +8,7 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //this.transform.position  //make pressure plate move down by 1 on the y axis
+        //this.transform.position   //make pressure plate move down by 1 on the y axis (idk how)
         thisWillGoAway.SetActive(false);
     }
 
