@@ -16,7 +16,7 @@ public class Mirrors : MonoBehaviour
         twoOfThem = GameObject.Find("Mirror Character");
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "MirrorPlayer")
         {
