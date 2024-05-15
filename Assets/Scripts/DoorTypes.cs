@@ -8,18 +8,6 @@ public class DoorTypes : MonoBehaviour
     public bool PlayerDoor;
     public bool MirrorDoor;
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        
-    }
-
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collided.");

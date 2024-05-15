@@ -39,5 +39,3 @@ public class PlayerMove : MonoBehaviour
         return movement;
     }
 }
-
-

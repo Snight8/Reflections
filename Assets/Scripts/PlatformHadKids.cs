@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class PlatformHadKids : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Vector3 movementDir(Vector3 Target)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.LookAt(Target);
+        return transform.forward;
     }
 }

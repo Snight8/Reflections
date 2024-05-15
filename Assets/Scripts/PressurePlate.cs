@@ -15,6 +15,11 @@ public class PressurePlate : MonoBehaviour
         AudioSource.PlayClipAtPoint(plateSound, transform.position);
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        thisWillGoAway.SetActive(false);
+    }
+
     private void OnTriggerExit(Collider other)
     {
         thisWillGoAway.SetActive(true);

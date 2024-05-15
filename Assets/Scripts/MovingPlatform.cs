@@ -4,36 +4,11 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public float platformSpeed;
-    Vector3 startingPoint;
-    public Vector3 secondPoint;
-    public Vector3 thirdPoint;
-    public Vector3 endingPoint;
-    Transform goToThisVector; //alright idk what im supposed to do with this but i put it here based on some enemy patrol script
+    Vector3 dir;
+    float speed;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        startingPoint = this.GetComponent<Vector3>();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "MirrorPlayer")
-        {
-            
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "MirrorPlayer")
-        {
-
-        }
-    }
-
-    IEnumerator PlatformGo()
-    {
-        yield return null;
+        //PlatformHadKids.movementDir([]);  //use this thing somewhere else. idk how to write this code
     }
 }
