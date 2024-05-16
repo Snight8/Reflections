@@ -825,6 +825,8 @@ MonoBehaviour:
   targets:
   - {x: -0.6, y: -1, z: -23}
   - {x: -0.6, y: 25, z: -23}
+  - {x: -0.6, y: 25, z: 0}
+  - {x: -0.6, y: 25, z: -23}
   moveIfTouched: 1
 --- !u!65 &1201063499
 BoxCollider:
@@ -1231,6 +1233,7 @@ Transform:
   - {fileID: 1761304843}
   - {fileID: 1642664985}
   - {fileID: 1201063497}
+  - {fileID: 2087154854}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2187,9 +2190,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087154848}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.86, y: 1.5, z: -11}
+  m_LocalPosition: {x: 14.3234215, y: 1.5928085, z: -12.753936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1428898343}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
