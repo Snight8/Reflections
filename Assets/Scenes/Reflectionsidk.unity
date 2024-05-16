@@ -784,6 +784,7 @@ GameObject:
   - component: {fileID: 1201063500}
   - component: {fileID: 1201063499}
   - component: {fileID: 1201063502}
+  - component: {fileID: 1201063498}
   m_Layer: 0
   m_Name: Elevator
   m_TagString: Untagged
@@ -799,13 +800,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201063496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.8287873, y: 0.19, z: -16.4}
+  m_LocalPosition: {x: -0.6, y: -2.3, z: -22.9}
   m_LocalScale: {x: 15.743693, y: 1, z: 5.5262}
   m_Children:
   - {fileID: 1921903627}
   m_Father: {fileID: 1428898343}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1201063498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201063496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca009acd34c5ab44f9efd24d9b409ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  targeting: {fileID: 1921903628}
+  currentTargetIndex: 0
+  targets:
+  - {x: -0.6, y: -1, z: -23}
+  - {x: -0.6, y: 25, z: -23}
+  moveIfTouched: 1
 --- !u!65 &1201063499
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -875,8 +895,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.2844696, z: 1}
-  m_Center: {x: 0, y: 0.16920471, z: 0.0000002588599}
+  m_Size: {x: 1, y: 3.148262, z: 1}
+  m_Center: {x: 0, y: 0.6011009, z: 0.0000002588599}
 --- !u!1 &1213495780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d50dfcaf13cec4eaa2ac68104579cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plateSound: {fileID: 8300000, guid: 4cc950605469c034288cf16cffcfda0b, type: 3}
   thisWillGoAway: {fileID: 1642664984}
 --- !u!65 &1761304845
 BoxCollider:
@@ -1916,6 +1937,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1921903627}
+  - component: {fileID: 1921903628}
   m_Layer: 0
   m_Name: Bebe
   m_TagString: Untagged
@@ -1937,6 +1959,18 @@ Transform:
   m_Father: {fileID: 1201063497}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1921903628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921903626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44c924bfcbb5a54eb1a70828d048267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2007978766
 GameObject:
   m_ObjectHideFlags: 0
