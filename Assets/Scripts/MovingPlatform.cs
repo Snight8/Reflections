@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
@@ -13,7 +12,7 @@ public class MovingPlatform : MonoBehaviour
     float DistanceToNextTarget;
     public bool running = true;
     public bool touchRequired;
-    List<Collider> touchingObjects
+    List<Collider> touchingObjects;
 
     void Start() //do not use void Awake here!! Awake is called on load, and it's possible that mirrored platforms won't load on the same frame, which will desync them!
     {
@@ -25,8 +24,9 @@ public class MovingPlatform : MonoBehaviour
     
     void Update()
     {
-        if (touchingObjects.Count == 0 && touchRequired) running = false;
-        else running = true;
+        //if (touchingObjects.Count == 0 && touchRequired) running = false;
+        //else running = true;
+        Debug.Log(touchingObjects);
         if (running)
         {
             if (Vector3.Distance(transform.position, targets[previousTargetIndex]) >= DistanceToNextTarget) //checks for overshoot. if this condition is true, it's time to switch targets!
@@ -39,22 +39,20 @@ public class MovingPlatform : MonoBehaviour
                 dir = targeting.movementDir(targets[currentTargetIndex]);
             }
             transform.Translate(dir * speed * Time.deltaTime);
-            touchingObjects.ForEach(MoveTouchingObject());
+            /*foreach(Collider touchingObject in touchingObjects.ToArray())
+            {
+                touchingObject.transform.Translate(dir * speed * Time.deltaTime);
+            }*/
         }
-    }
-    
-    public void MoveTouchingObject(Collider touchingObject)
-    {
-        touchingObject.transform.Translate(dir * speed * Time.deltaTime);
     }
     
     void OnTriggerEnter(Collider other)
     {
     	//if the object is not already in the list
-    	if(!TriggerList.Contains(other))
+    	if(!touchingObjects.Contains(other))
     	{
     		//add the object to the list
-    		TriggerList.Add(Other);
+    		touchingObjects.Add(other);
     	}
     }
     
@@ -62,10 +60,10 @@ public class MovingPlatform : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
     	//if the object is in the list
-    	if(TriggerList.Contains(other))
+    	if(touchingObjects.Contains(other))
     	{
     		//remove it from the list
-    		TriggerList.Remove(Other);
+    		touchingObjects.Remove(other);
     	}
     }
 }
