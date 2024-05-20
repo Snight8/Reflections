@@ -1,11 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Mirrors : MonoBehaviour
 {
-    public Image flashAColor; //it's that png you told me to have instead of camera for effects
+    public GameObject StarParticles; 
     GameObject hesHere; // standard player
     GameObject twoOfThem; // mirror player
     public AudioClip passingThrough; //the sound that plays when you're in the mirror. Get it?!??!/1!?
@@ -36,15 +34,9 @@ public class Mirrors : MonoBehaviour
 
     IEnumerator MirrorDoesThings()
     {
-        AudioSource.PlayClipAtPoint(passingThrough, transform.position);
-        flashAColor.color = new Color32(255,255,255,100); //white
-        yield return new WaitForSeconds(.05f);
-        flashAColor.color = new Color32(96, 237, 247, 100); //cyan
-        yield return new WaitForSeconds(.05f);
-        flashAColor.color = new Color32(12, 42, 194, 100); //blue
-        yield return new WaitForSeconds(.05f);
-        flashAColor.color = new Color32(76, 125, 199, 100); //light blue
-        yield return new WaitForSeconds(.05f);
+        Vector3 avgPos = (hesHere.transform.position + twoOfThem.transform.position) / 2;
+        AudioSource.PlayClipAtPoint(passingThrough, avgPos);
+        Instantiate(StarParticles, avgPos, Quaternion.identity);
         yield return null;
     }
 
@@ -59,7 +51,6 @@ public class Mirrors : MonoBehaviour
         {
             constraintsForGameObject(4);
         }
-        flashAColor.color = new Color32(0, 0, 0, 0);
         yield return null;
     }
 

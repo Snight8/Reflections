@@ -1004,7 +1004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cd185341eeff044ab7fc4f286c4558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashAColor: {fileID: 1407072264}
+  StarParticles: {fileID: 9014770831898536639, guid: 7939acc46a2209f48b343ced21541207,
+    type: 3}
   passingThrough: {fileID: 8300000, guid: ce0f0f2daa11c4e4faf8113ebcc4ea53, type: 3}
 --- !u!1 &1267799840
 GameObject:
@@ -1120,7 +1121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267799840}
   m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: 0, y: 9.160445, z: -6.4278765}
+  m_LocalPosition: {x: 0, y: 9.160446, z: -6.427876}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1373,7 +1374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580014737}
   m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
-  m_LocalPosition: {x: 0, y: 9.160445, z: -6.4278765}
+  m_LocalPosition: {x: 0, y: 9.160446, z: -6.427876}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1598212534}
@@ -1890,7 +1891,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8cb83a2b5d9230c4db5f727b8ec96c03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
