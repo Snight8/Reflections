@@ -393,7 +393,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: adcd5cb97d274734eae42ee66fb21dcc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bb8f3278b228c044fb9414fb35e16342, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
@@ -1225,7 +1225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cd185341eeff044ab7fc4f286c4558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashAColor: {fileID: 785125813}
+  StarParticles: {fileID: 9014770831898536639, guid: 7939acc46a2209f48b343ced21541207,
+    type: 3}
   passingThrough: {fileID: 8300000, guid: ce0f0f2daa11c4e4faf8113ebcc4ea53, type: 3}
 --- !u!65 &1143466437
 BoxCollider:
