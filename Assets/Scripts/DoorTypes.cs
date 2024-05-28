@@ -13,11 +13,19 @@ public class DoorTypes : MonoBehaviour
         Debug.Log("Collided.");
         if (collision.gameObject.tag == "MirrorPlayer" && MirrorDoor == true)
         {
-            Destroy(gameObject);
+            StartCoroutine(GoThroughIt());
         }
         if (collision.gameObject.tag == "Player" && PlayerDoor == true)
         {
-            Destroy(gameObject);
+            StartCoroutine(GoThroughIt());
         }
+    }
+
+    IEnumerator GoThroughIt()
+    {
+        this.GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(.5f);
+        this.GetComponent<Collider>().enabled = true;
+        yield return null;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class PlayerMove : MonoBehaviour
             playerMirror.Translate(MovementCalc(input, false, true));
         }
         //defaults to no mirror movement
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     private Vector3 MovementCalc(Vector3 input, bool flipX = false, bool flipZ = false)
