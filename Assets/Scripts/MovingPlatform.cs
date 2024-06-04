@@ -26,7 +26,7 @@ public class MovingPlatform : MonoBehaviour
     {
         //if (touchingObjects.Count == 0 && touchRequired) running = false;
         //else running = true;
-        Debug.Log(touchingObjects);
+        //Debug.Log(touchingObjects);
         if (running)
         {
             if (Vector3.Distance(transform.position, targets[previousTargetIndex]) >= DistanceToNextTarget) //checks for overshoot. if this condition is true, it's time to switch targets!

@@ -16,12 +16,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - MirrorPlayer
+  - PlayerDoor
+  - MirrorDoor
+  - Pushable
+  - Mirror
   - 
   - 
   - 
