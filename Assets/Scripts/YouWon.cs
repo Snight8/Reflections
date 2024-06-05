@@ -8,6 +8,7 @@ public class YouWon : MonoBehaviour
     public float FadeTime;
     public Renderer render;
     float completionPercentage;
+    public int levelNum;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" || other.tag == "MirrorPlayer")
@@ -18,6 +19,7 @@ public class YouWon : MonoBehaviour
 
     IEnumerator BigW()
     {
+        if (PlayerPrefs.GetInt("HighestClearedLevel") < levelNum) PlayerPrefs.SetInt("HighestClearedLevel", levelNum);
         AudioSource.PlayClipAtPoint(winSound, transform.position);
         yield return new WaitForSeconds(2.5f);
         Application.LoadLevel(Application.loadedLevel + 1);
