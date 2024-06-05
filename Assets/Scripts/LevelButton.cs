@@ -1,0 +1,26 @@
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class LevelButton : MonoBehaviour
+{
+    bool unlocked;
+    public int levelNum;
+    public int sceneIndex;
+    
+    // Start is called before the first frame update
+    void Awake()
+    {
+        GetComponentInChildren<Text>().text = levelNum.ToString();
+        unlocked = PlayerPrefs.GetInt("HighestClearedLevel") + 1 >= levelNum; // if the highest cleared level is before this level, it should be unlocked.
+        if (!unlocked)
+        {
+            GetComponent<Button>().interactable = false;
+            transform.localScale = new Vector3(1, -1, 1);
+        }
+    }
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
+}
