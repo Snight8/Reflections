@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
@@ -8,6 +9,18 @@ public class MainMenu : MonoBehaviour
     public AudioSource music;
     public Slider BgmSlider;
     public Slider SfxSlider;
+    public AudioMixer mix;
+
+    public void Start()
+    {
+        //load volumes into mixer/sliders from playerprefs
+        float BgmVolume = PlayerPrefs.GetFloat("BgmVolume");
+        float SfxVolume = PlayerPrefs.GetFloat("SfxVolume");
+        BgmSlider.value = VolumeToSlider(BgmVolume);
+        SfxSlider.value = VolumeToSlider(SfxVolume);
+        mix.SetFloat("BgmVolume", BgmVolume);
+        mix.SetFloat("SfxVolume", SfxVolume);
+    }
     public void QuitButton()
     {
         Application.Quit();
@@ -30,13 +43,24 @@ public class MainMenu : MonoBehaviour
     }
     public void UpdateBgmVolume()
     {
-        music.volume = BgmSlider.value;
-        PlayerPrefs.SetFloat("BgmVolume", BgmSlider.value);
+        mix.SetFloat("BgmVolume", SliderToVolume(BgmSlider.value));
+        PlayerPrefs.SetFloat("BgmVolume", SliderToVolume(BgmSlider.value));
     }
     public void UpdateSfxVolume()
     {
-        selectSound.volume = SfxSlider.value;
-        backSound.volume = SfxSlider.value;
-        PlayerPrefs.SetFloat("SfxVolume", SfxSlider.value);
+        mix.SetFloat("SfxVolume", SliderToVolume(SfxSlider.value));
+        PlayerPrefs.SetFloat("SfxVolume", SliderToVolume(SfxSlider.value));
+    }
+    float SliderToVolume(float slider)
+    {
+        slider *= 100;
+        slider -= 80;
+        return slider;
+    }
+    float VolumeToSlider(float volume)
+    {
+        volume += 80;
+        volume /= 100;
+        return volume;
     }
 }

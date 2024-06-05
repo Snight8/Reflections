@@ -7,7 +7,7 @@ public class Mirrors : MonoBehaviour
     public GameObject StarParticles; 
     GameObject hesHere; // standard player
     GameObject twoOfThem; // mirror player
-    public AudioClip passingThrough; //the sound that plays when you're in the mirror. Get it?!??!/1!?
+    public AudioClip mirrorPassSound; //the sound that plays when you're in the mirror. Get it?!??!/1!?
     public float SolidDistance = 1.7f;
     public Axis mirrorAxis;
     public float CloseEnough = 0.5f;
@@ -38,12 +38,13 @@ public class Mirrors : MonoBehaviour
         float yDistance = Mathf.Abs(hesHere.transform.position.y - twoOfThem.transform.position.y);
         mirrorCollider.isTrigger = (playerMirrorDist <= SolidDistance && mirrorPlayerMirrorDist <= SolidDistance) && (yDistance <= CloseEnough && otherDistance <= CloseEnough);
     }
-
-    IEnumerator MirrorDoesThings()
+    void OnTriggerEnter (Collider other)
     {
-        Vector3 avgPos = (hesHere.transform.position + twoOfThem.transform.position) / 2;
-        AudioSource.PlayClipAtPoint(passingThrough, avgPos);
-        Instantiate(StarParticles, avgPos, Quaternion.identity);
-        yield return null;
+        if (other.tag == "Player")
+        {
+            Vector3 avgPos = (hesHere.transform.position + twoOfThem.transform.position) / 2;
+            AudioSource.PlayClipAtPoint(mirrorPassSound, avgPos);
+            Instantiate(StarParticles, avgPos, Quaternion.identity);
+        }
     }
 }

@@ -12,11 +12,20 @@ public class LevelButton : MonoBehaviour
     void Awake()
     {
         GetComponentInChildren<Text>().text = levelNum.ToString();
+        UnlockRefresh();
+    }
+    public void UnlockRefresh()
+    {
         unlocked = PlayerPrefs.GetInt("HighestClearedLevel") + 1 >= levelNum; // if the highest cleared level is before this level, it should be unlocked.
         if (!unlocked)
         {
             GetComponent<Button>().interactable = false;
             transform.localScale = new Vector3(1, -1, 1);
+        }
+        else
+        {
+            GetComponent<Button>().interactable = true;
+            transform.localScale = new Vector3(1, 1, 1);
         }
     }
     public void LoadScene()

@@ -364,12 +364,12 @@ PrefabInstance:
     - target: {fileID: 1834912737183791278, guid: 0ae93a35f9c59ed47924f72778ed2190,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.160445
+      value: 9.160446
       objectReference: {fileID: 0}
     - target: {fileID: 1834912737183791278, guid: 0ae93a35f9c59ed47924f72778ed2190,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.4278765
+      value: -6.427876
       objectReference: {fileID: 0}
     - target: {fileID: 1834912737183791278, guid: 0ae93a35f9c59ed47924f72778ed2190,
         type: 3}
@@ -469,7 +469,6 @@ MonoBehaviour:
   - {x: -0.6, y: 25, z: -23}
   - {x: -0.6, y: 25, z: 0}
   - {x: -0.6, y: 25, z: -23}
-  running: 1
   touchRequired: 0
 --- !u!65 &1201063499
 BoxCollider:
@@ -828,6 +827,7 @@ GameObject:
   - component: {fileID: 1765400263}
   - component: {fileID: 1765400262}
   - component: {fileID: 1765400261}
+  - component: {fileID: 1765400265}
   m_Layer: 0
   m_Name: floor
   m_TagString: Untagged
@@ -842,7 +842,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765400260}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c9b96c6e1f0ffb247b0d55d9ddc925a0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -865,7 +865,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 77511a6d315863c4eb012baac338693a, type: 2}
+  - {fileID: 2100000, guid: 698f73e4a0b745843952deccfdc24bc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -907,6 +907,19 @@ Transform:
   m_Father: {fileID: 1428898343}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1765400265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765400260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3b2f4455032224db7351c5dc93552b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 1
 --- !u!4 &1780119562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5401656890564346140, guid: 26f483bc78f0b6d4c95993fba85c2524,
@@ -1350,12 +1363,12 @@ PrefabInstance:
     - target: {fileID: 2514649466970265288, guid: d247cd5223969564aabe1451dcbad132,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.160445
+      value: 9.160446
       objectReference: {fileID: 0}
     - target: {fileID: 2514649466970265288, guid: d247cd5223969564aabe1451dcbad132,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.4278765
+      value: -6.427876
       objectReference: {fileID: 0}
     - target: {fileID: 2514649466970265288, guid: d247cd5223969564aabe1451dcbad132,
         type: 3}

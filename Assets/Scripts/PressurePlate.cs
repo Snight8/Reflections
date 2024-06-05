@@ -1,28 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
 
-    public AudioClip plateSound;
+    public AudioSource UnclickSound;
+    public AudioSource ClickSound;
     public GameObject thisWillGoAway; //this is just any object that we want to appear/disappear if you have something on the plate
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //this.transform.position   //make pressure plate move down by 1 on the y axis (idk how)
-        thisWillGoAway.SetActive(false);
-        AudioSource.PlayClipAtPoint(plateSound, transform.position);
-    }
-
-    private void OnTriggerStay(Collider other)
+    void OnTriggerEnter()
     {
         thisWillGoAway.SetActive(false);
+        ClickSound.Play();
+        transform.Translate(new Vector3(0, -0.15f, 0));
     }
 
-    private void OnTriggerExit(Collider other)
+    /*void OnTriggerStay()
+    {
+        thisWillGoAway.SetActive(false);
+    }*/
+
+    void OnTriggerExit()
     {
         thisWillGoAway.SetActive(true);
-        AudioSource.PlayClipAtPoint(plateSound, transform.position);
+        UnclickSound.Play();
+        transform.Translate(new Vector3(0, 0.15f, 0));
     }
 }
