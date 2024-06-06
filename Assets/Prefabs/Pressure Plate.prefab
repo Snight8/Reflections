@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1545617952452540186}
   - component: {fileID: 1545617952452540187}
   - component: {fileID: 1545617952452540184}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Pressure Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3583354688650082553}
   - component: {fileID: 61132534845181480}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: UnclickSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8900500561758360460}
   - component: {fileID: 1923193183157842544}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ClickSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
