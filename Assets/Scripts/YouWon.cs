@@ -33,5 +33,15 @@ public class YouWon : MonoBehaviour
         timer += Time.deltaTime;
         completionPercentage = (timer % FadeTime)/FadeTime;
         render.material.color = Color.HSVToRGB(completionPercentage, 1, 1);
+
+        // reload (this should not be in here but i have 6 minutes AAAAAAAAAAA)
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(levelNum);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
