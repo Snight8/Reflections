@@ -44,6 +44,6 @@ public class MovingPlatform : MonoBehaviour
     }
     public void MoveCharacterOnPlatform(CharacterController cc)
     {
-        cc.Move(dir * speed * Time.deltaTime * 2); // NOT sure why 2 works, but it does! I've only tested this on level 5 so here's hoping it doesn't break on everything else!
+        cc.Move(dir * speed * Time.deltaTime);
     }
 }
