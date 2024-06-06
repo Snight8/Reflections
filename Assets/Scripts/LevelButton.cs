@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelButton : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class LevelButton : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        GetComponentInChildren<Text>().text = levelNum.ToString();
+        GetComponentInChildren<TextMeshProUGUI>().text = levelNum.ToString();
         UnlockRefresh();
     }
     public void UnlockRefresh()

@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ButtonHover : MonoBehaviour
 {
     public Image buttonImage;
-    public Text buttonText;
+    public TextMeshProUGUI buttonText;
 
     public void OnHoverEnter()
     {
