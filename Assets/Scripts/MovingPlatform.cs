@@ -39,6 +39,11 @@ public class MovingPlatform : MonoBehaviour
     }
     public void MoveObjectOnPlatform(Transform objectOnPlatform)
     {
+        Debug.Log("MoveObjectOnPlatformCalled");
         objectOnPlatform.Translate(dir * speed * Time.deltaTime); // if moving y messes stuff up, change dir to "new Vector3(dir.x, 0, dir.z)"
+    }
+    public void MoveCharacterOnPlatform(CharacterController cc)
+    {
+        cc.Move(dir * speed * Time.deltaTime * 2); // NOT sure why 2 works, but it does! I've only tested this on level 5 so here's hoping it doesn't break on everything else!
     }
 }
