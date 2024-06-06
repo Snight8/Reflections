@@ -23,7 +23,7 @@ public class YouWon : MonoBehaviour
         if (PlayerPrefs.GetInt("HighestClearedLevel") < levelNum) PlayerPrefs.SetInt("HighestClearedLevel", levelNum);
         winSound.Play();
         yield return new WaitForSeconds(2.5f);
-        if (levelNum != 4) SceneManager.LoadScene(levelNum + 1);
+        if (levelNum != 5) SceneManager.LoadScene(levelNum + 1);
         else SceneManager.LoadScene(0);
         yield return null;
     }
