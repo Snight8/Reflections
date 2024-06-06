@@ -6,5 +6,10 @@ public class PlatformTrigger : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("MirrorPlayer")) platformScript.Run();
+        {
+            if (platformScript.touchRequired) platformScript.Run();
+            platformScript.MoveObjectOnPlatform(other.transform);
+        }
+
     }
 }

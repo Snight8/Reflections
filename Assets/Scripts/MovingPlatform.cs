@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
@@ -37,5 +36,9 @@ public class MovingPlatform : MonoBehaviour
             dir = targeting.movementDir(targets[currentTargetIndex]);
         }
         transform.Translate(dir * speed * Time.deltaTime);
+    }
+    public void MoveObjectOnPlatform(Transform objectOnPlatform)
+    {
+        objectOnPlatform.Translate(dir * speed * Time.deltaTime); // if moving y messes stuff up, change dir to "new Vector3(dir.x, 0, dir.z)"
     }
 }

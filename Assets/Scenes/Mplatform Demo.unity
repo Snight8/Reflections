@@ -1603,7 +1603,7 @@ PrefabInstance:
     - target: {fileID: 4565978895643873022, guid: 6c62d24eb49c16f47b423143f84376b0,
         type: 3}
       propertyPath: m_Name
-      value: WinCube (1)
+      value: WinCube
       objectReference: {fileID: 0}
     - target: {fileID: 4565978895643873021, guid: 6c62d24eb49c16f47b423143f84376b0,
         type: 3}
@@ -1663,7 +1663,7 @@ PrefabInstance:
     - target: {fileID: 4565978895643873020, guid: 6c62d24eb49c16f47b423143f84376b0,
         type: 3}
       propertyPath: levelNum
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c62d24eb49c16f47b423143f84376b0, type: 3}
