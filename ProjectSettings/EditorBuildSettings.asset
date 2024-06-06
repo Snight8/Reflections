@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 66153ae67cfd34649bf1eccdac24a9d6
   - enabled: 1
-    path: Assets/Scenes/Reflectionsidk.unity
-    guid: 76fed9b7c57155447807702fb9138ce6
-  - enabled: 1
     path: Assets/Scenes/Demo Level.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1

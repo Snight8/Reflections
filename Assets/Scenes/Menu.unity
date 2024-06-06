@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNum: 1
-  sceneIndex: 2
+  sceneIndex: 1
 --- !u!114 &14574654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNum: 4
-  sceneIndex: 5
+  sceneIndex: 4
 --- !u!114 &209263528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4203,7 +4203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNum: 3
-  sceneIndex: 4
+  sceneIndex: 3
 --- !u!114 &1616602372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5569,7 +5569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNum: 2
-  sceneIndex: 3
+  sceneIndex: 2
 --- !u!114 &2088356536
 MonoBehaviour:
   m_ObjectHideFlags: 0
