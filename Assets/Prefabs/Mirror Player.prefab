@@ -102,8 +102,8 @@ MonoBehaviour:
   isMirrorX: 1
   isMirrorZ: 0
   pushPower: 5
-  gravity: -9.81
-  jumpHeight: 1
+  gravity: -15
+  jumpHeight: 2
   groundCheck: {fileID: 291878568423028769}
   groundDistance: 0.4
   groundMask:
