@@ -16,6 +16,7 @@ public class CamManager : MonoBehaviour
     public Vector3 cameraOffset;
     public bool OverrideSplitscreen; //run the check splitscreen logic only if this is disabled. if this is disabled, you can set whether it's splitscreen or not manually.
     public bool inSplitscreen;
+    public float splitscreenToggleDifference = 30f;
 
     private void Awake()
     {
@@ -28,7 +29,7 @@ public class CamManager : MonoBehaviour
         ssCam1.transform.position = player.position + cameraOffset;
         ssCam2.transform.position = mirrorPlayer.position + cameraOffset;
 
-        if (!OverrideSplitscreen) inSplitscreen = Cam.fieldOfView == Transposer.m_MaximumFOV; //if the normal camera's FOV equals the max FOV from Cinemachine, it should enable the splitscreen cameras.
+        if (!OverrideSplitscreen) inSplitscreen = Vector3.Distance(player.position, mirrorPlayer.position) >= splitscreenToggleDifference;
         ssCam1.SetActive(inSplitscreen);
         ssCam2.SetActive(inSplitscreen);
         ssBar.SetActive(inSplitscreen);
