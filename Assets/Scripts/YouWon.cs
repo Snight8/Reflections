@@ -10,6 +10,8 @@ public class YouWon : MonoBehaviour
     public Renderer render;
     float completionPercentage;
     public GameObject WinScreen;
+    public Animator WinAnimator;
+    public float CubeAlpha = 1;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" || other.tag == "MirrorPlayer")
@@ -22,6 +24,7 @@ public class YouWon : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("HighestClearedLevel") < SceneManager.GetActiveScene().buildIndex) PlayerPrefs.SetInt("HighestClearedLevel", SceneManager.GetActiveScene().buildIndex);
         winSound.Play();
+        WinAnimator.SetTrigger("CubeCollected");
         yield return new WaitForSeconds(2.5f);
         WinScreen.SetActive(true);
         yield return null;
@@ -31,6 +34,8 @@ public class YouWon : MonoBehaviour
     {
         timer += Time.deltaTime;
         completionPercentage = (timer % FadeTime)/FadeTime;
-        render.material.color = Color.HSVToRGB(completionPercentage, 1, 1);
+        Color newColor = Color.HSVToRGB(completionPercentage, 1, 1);
+        newColor.a = CubeAlpha;
+        render.material.color = newColor;
     }
 }
