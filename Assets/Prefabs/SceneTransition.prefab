@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 3460098352624515302}
   m_Layer: 5
   m_Name: SceneTransition
-  m_TagString: Untagged
+  m_TagString: SceneTransition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -290,3 +290,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7694981761243343533}
+  FadeVolume: 0
+  audioMixer: {fileID: 24100000, guid: 60044ea011457a04e9614c4e3b01259a, type: 2}

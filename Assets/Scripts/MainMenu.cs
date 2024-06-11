@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
         SfxSlider.value = VolumeToSlider(SfxVolume);
         mix.SetFloat("BgmVolume", BgmVolume);
         mix.SetFloat("SfxVolume", SfxVolume);
+        mix.SetFloat("BgmFadeVolume", 0);
     }
     public void QuitButton()
     {

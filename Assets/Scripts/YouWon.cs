@@ -12,6 +12,9 @@ public class YouWon : MonoBehaviour
     public GameObject WinScreen;
     public Animator WinAnimator;
     public float CubeAlpha = 1;
+
+    public NewPlayerMovement player;
+    public NewPlayerMovement mirrorPlayer;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") || other.CompareTag("MirrorPlayer"))
@@ -22,11 +25,13 @@ public class YouWon : MonoBehaviour
 
     IEnumerator BigW()
     {
-        if (PlayerPrefs.GetInt("HighestClearedLevel") < SceneManager.GetActiveScene().buildIndex) PlayerPrefs.SetInt("HighestClearedLevel", SceneManager.GetActiveScene().buildIndex);
         winSound.Play();
         WinAnimator.SetTrigger("CubeCollected");
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1);
+        if (PlayerPrefs.GetInt("HighestClearedLevel") < SceneManager.GetActiveScene().buildIndex) PlayerPrefs.SetInt("HighestClearedLevel", SceneManager.GetActiveScene().buildIndex);
         WinScreen.SetActive(true);
+        player.movementUnlocked = false;
+        mirrorPlayer.movementUnlocked = false;
         yield return null;
     }
 

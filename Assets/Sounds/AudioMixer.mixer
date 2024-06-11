@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-4435672890155161679
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 0595b6727458de8459c84efea5830601
+  m_EffectName: Attenuation
+  m_MixLevel: ec2561b6eb13b94498d0366077ab5cde
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -16,6 +30,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: edb6f632e276f3f49b1b2f96ee7636a1
+    name: BgmFadeVolume
   - guid: cf083c176182cb644974b14505fb60d9
     name: BgmVolume
   - guid: 7c0b07cefa1a0e04ea6e87ee2c668b09
@@ -25,6 +41,7 @@ AudioMixerController:
     - 0a4914d7459e6d44c904f1191d448de5
     - 1974334e90a418d4b9da0b779d24d850
     - 06981a47f3b1dd846a3c3ec3517180ac
+    - 5b4181d9d0dd3d243a02087046d12dd4
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -39,9 +56,10 @@ AudioMixerGroupController:
   m_GroupID: 0a4914d7459e6d44c904f1191d448de5
   m_Children:
   - {fileID: 243491877045217488}
-  - {fileID: 243229615653457004}
+  - {fileID: 8885367072959700466}
   m_Volume: 17abb278397cfc34ba4197d745b23356
   m_Pitch: 0182050371c59ac44b4807c339f63671
+  m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
   m_UserColorIndex: 0
@@ -72,6 +90,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: db154c2b19a55b44f86199048be0ae5b
   m_FloatValues:
+    edb6f632e276f3f49b1b2f96ee7636a1: 0
     cf083c176182cb644974b14505fb60d9: 0
   m_TransitionOverrides: {}
 --- !u!243 &243229615653457004
@@ -86,6 +105,7 @@ AudioMixerGroupController:
   m_Children: []
   m_Volume: cf083c176182cb644974b14505fb60d9
   m_Pitch: 66b357979fa57ae4ea10a64c2d7f00f4
+  m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 244973301747755380}
   m_UserColorIndex: 0
@@ -104,6 +124,7 @@ AudioMixerGroupController:
   m_Children: []
   m_Volume: 7c0b07cefa1a0e04ea6e87ee2c668b09
   m_Pitch: 50860a3d8bcfb304fbb3273ab05cb761
+  m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 244298340269692320}
   m_UserColorIndex: 0
@@ -166,3 +187,23 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &8885367072959700466
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BGM Fade
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 5b4181d9d0dd3d243a02087046d12dd4
+  m_Children:
+  - {fileID: 243229615653457004}
+  m_Volume: edb6f632e276f3f49b1b2f96ee7636a1
+  m_Pitch: 696f99711f3c5ba42904210473636a8d
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -4435672890155161679}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0

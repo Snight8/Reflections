@@ -8,13 +8,14 @@ public class LevelButton : MonoBehaviour
     bool unlocked;
     public int levelNum;
     public int sceneIndex;
-    public SceneLoader sl;
+    SceneLoader sl;
     
     // Start is called before the first frame update
     void Awake()
     {
         GetComponentInChildren<TextMeshProUGUI>().text = levelNum.ToString();
         UnlockRefresh();
+        sl = GameObject.Find("SceneTransition").GetComponent<SceneLoader>(); // have to use GameObject.Find(), due to the implementation of SceneTransition using DontDestroyOnLoad. Only the one from the menu will be used, which is impossible to assign ahead of time (since it won't be in the scene until runtime)
     }
     public void UnlockRefresh()
     {

@@ -23,6 +23,8 @@ public class NewPlayerMovement : MonoBehaviour
 
     public Animator animator;
 
+    public bool movementUnlocked = true;
+
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +33,8 @@ public class NewPlayerMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         if (isMirrorZ) vertical *= -1;
         Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
+
+        if (!movementUnlocked) direction = Vector3.zero;
 
         if (direction.magnitude >= 0.1f)
         {
@@ -49,7 +53,7 @@ public class NewPlayerMovement : MonoBehaviour
         {
             velocity.y = -2f;
         }
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded && movementUnlocked)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             jumpSound.Play();
