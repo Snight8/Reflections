@@ -50,6 +50,10 @@ public class DebugMode : MonoBehaviour
                 PlayerPrefs.SetInt("HighestClearedLevel", 4);
                 RefreshLevels();
             }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                ScreenCapture.CaptureScreenshot("screenshot.png");
+            }
         }
     }
     void RefreshLevels()
