@@ -19,8 +19,8 @@ public class MainMenu : MonoBehaviour
         BgmSlider.value = VolumeToSlider(BgmVolume);
         SfxSlider.value = VolumeToSlider(SfxVolume);
         mix.SetFloat("BgmVolume", BgmVolume);
+        mix.SetFloat("BgmFadeVolume", BgmVolume);
         mix.SetFloat("SfxVolume", SfxVolume);
-        mix.SetFloat("BgmFadeVolume", 0);
     }
     public void QuitButton()
     {
@@ -45,6 +45,7 @@ public class MainMenu : MonoBehaviour
     public void UpdateBgmVolume()
     {
         mix.SetFloat("BgmVolume", SliderToVolume(BgmSlider.value));
+        mix.SetFloat("BgmFadeVolume", SliderToVolume(BgmSlider.value));
         PlayerPrefs.SetFloat("BgmVolume", SliderToVolume(BgmSlider.value));
     }
     public void UpdateSfxVolume()
