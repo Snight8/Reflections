@@ -8,6 +8,7 @@ public class LevelButton : MonoBehaviour
     bool unlocked;
     public int levelNum;
     public int sceneIndex;
+    public SceneLoader sl;
     
     // Start is called before the first frame update
     void Awake()
@@ -31,6 +32,7 @@ public class LevelButton : MonoBehaviour
     }
     public void LoadScene()
     {
-        SceneManager.LoadScene(sceneIndex);
+        Debug.Log("LoadScene called");
+        sl.LoadSceneWithTransition(sceneIndex);
     }
 }

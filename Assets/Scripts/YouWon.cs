@@ -9,7 +9,7 @@ public class YouWon : MonoBehaviour
     public float FadeTime;
     public Renderer render;
     float completionPercentage;
-    public int levelNum;
+    public GameObject WinScreen;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" || other.tag == "MirrorPlayer")
@@ -20,11 +20,10 @@ public class YouWon : MonoBehaviour
 
     IEnumerator BigW()
     {
-        if (PlayerPrefs.GetInt("HighestClearedLevel") < levelNum) PlayerPrefs.SetInt("HighestClearedLevel", levelNum);
+        if (PlayerPrefs.GetInt("HighestClearedLevel") < SceneManager.GetActiveScene().buildIndex) PlayerPrefs.SetInt("HighestClearedLevel", SceneManager.GetActiveScene().buildIndex);
         winSound.Play();
         yield return new WaitForSeconds(2.5f);
-        if (levelNum != 5) SceneManager.LoadScene(levelNum + 1);
-        else SceneManager.LoadScene(0);
+        WinScreen.SetActive(true);
         yield return null;
     }
 
@@ -33,15 +32,5 @@ public class YouWon : MonoBehaviour
         timer += Time.deltaTime;
         completionPercentage = (timer % FadeTime)/FadeTime;
         render.material.color = Color.HSVToRGB(completionPercentage, 1, 1);
-
-        // reload (this should not be in here but i have 6 minutes AAAAAAAAAAA)
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(levelNum);
-        }
-        if (Input.GetKeyDown(KeyCode.Escape)) 
-        {
-            SceneManager.LoadScene(0);
-        }
     }
 }
