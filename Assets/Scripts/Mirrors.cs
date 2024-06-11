@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Animations;
 
 public class Mirrors : MonoBehaviour
 {
-    public GameObject StarParticles; 
+    public GameObject StarParticles;
     GameObject hesHere; // standard player
     GameObject twoOfThem; // mirror player
-    public AudioClip mirrorPassSound; //the sound that plays when you're in the mirror. Get it?!??!/1!?
+    public AudioSource mirrorPassSound;
     public float SolidDistance = 1.7f;
     public Axis mirrorAxis;
     public float CloseEnough = 0.5f;
@@ -43,7 +42,8 @@ public class Mirrors : MonoBehaviour
         if (other.tag == "Player")
         {
             Vector3 avgPos = (hesHere.transform.position + twoOfThem.transform.position) / 2;
-            AudioSource.PlayClipAtPoint(mirrorPassSound, avgPos);
+            mirrorPassSound.transform.position = avgPos;
+            mirrorPassSound.Play();
             Instantiate(StarParticles, avgPos, Quaternion.identity);
         }
     }
