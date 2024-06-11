@@ -14,7 +14,7 @@ public class YouWon : MonoBehaviour
     public float CubeAlpha = 1;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" || other.tag == "MirrorPlayer")
+        if (other.CompareTag("Player") || other.CompareTag("MirrorPlayer"))
         {
             StartCoroutine(BigW());
         }
